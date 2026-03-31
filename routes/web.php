@@ -13,6 +13,7 @@ Route::view('/services', 'services')->name('services');
 Route::view('/nocturnes', 'nocturnes')->name('nocturnes');
 Route::view('/emploi', 'emploi')->name('emploi');
 Route::view('/contact', 'contact')->name('contact');
+Route::view('/reservation', 'reservation')->name('reservation');
 
 
 

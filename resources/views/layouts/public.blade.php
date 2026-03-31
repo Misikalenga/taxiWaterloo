@@ -34,7 +34,7 @@
                     <a href="{{ route('tarifs') }}" class="my-auto text-white hover:text-taxi transition">Tarifs</a>
                     <a href="{{ route('services') }}" class="my-auto text-white hover:text-taxi transition">Nos services</a>
                     <a href="{{ route('nocturnes') }}" class="my-auto text-white hover:text-taxi transition">Transports nocturnes</a>
-                    <a href="{{ route('home') }}" class="my-auto  text-white hover:text-taxi transition">Reservation</a>
+                    <a href="{{ route('reservation') }}" class="my-auto  text-white hover:text-taxi transition">Reservation</a>
                 </div>    
 
                     
@@ -70,7 +70,7 @@
                     <ul class="space-y-2 text-sm text-gray-300">
                         <li><a href="{{ route('emploi') }}" class="hover:text-taxi transition">Offres d'emploi</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-taxi transition">Contact</a></li>
-                        <li><a href="#reservation" class="hover:text-taxi transition">Réserver une course</a></li>
+                        <li><a href="{{ route('reservation') }}" class="hover:text-taxi transition">Réserver une course</a></li>
                         <li>
                             @auth
                                 <a href="/dashboard" class="my-auto hover:text-taxi text-gray-300 transition">Admin</a>
