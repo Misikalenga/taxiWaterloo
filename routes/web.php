@@ -6,7 +6,15 @@ use App\Http\Controllers\ReservationController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::view('/tarifs', 'tarifs')->name('tarifs');
+Route::view('/services', 'services')->name('services');
+Route::view('/nocturnes', 'nocturnes')->name('nocturnes');
+Route::view('/emploi', 'emploi')->name('emploi');
+Route::view('/contact', 'contact')->name('contact');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
