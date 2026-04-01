@@ -11,7 +11,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <nav class="bg-gray-900 text-black sticky top-0 z-50 shadow-lg">
+    <nav class="bg-gray-900 text-black sticky top-0  z-50 shadow-lg">
         <div class="h-10 bg-blue-700/20 flex items-center justify-between px-6">
             <div class="flex gap-2">
                 <a href="https://www.facebook.com/taxitonywaterloo/" target="_blank"><img src="{{ asset('image/facebook.png') }}" alt="facebook" class="w-8 hover:scale-110 transition-transform"></a>
@@ -29,20 +29,69 @@
                 <a class="flex-shrink-0 font-bold text-xl text-taxi uppercase" href="{{ route('home') }}">
                     {{ config('app.name', 'Taxi Tony') }}
                 </a>
-                <div class="hidden md:flex space-x-6 text-md font-medium px-4">
+                <div class="hidden md:flex space-x-6  text-md font-medium px-4">
                     <a href="{{ route('home') }}" class="my-auto  text-white hover:text-taxi transition">Accueil</a>
                     <a href="{{ route('tarifs') }}" class="my-auto text-white hover:text-taxi transition">Tarifs</a>
                     <a href="{{ route('services') }}" class="my-auto text-white hover:text-taxi transition">Nos services</a>
                     <a href="{{ route('nocturnes') }}" class="my-auto text-white hover:text-taxi transition">Transports nocturnes</a>
                     <a href="{{ route('reservation') }}" class="my-auto  text-white hover:text-taxi transition">Reservation</a>
                 </div>    
-
+                
                     
                     <a href="#reservation" class="bg-taxi text-black flex px-1 py-1 rounded font-bold hover:bg-yellow-500 transition"><img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6"> <span class="text-sm mt-auto" id="cart-count">0</span></a>
                 
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1 focus:outline-none group">
+                    <div id="bar-1" class="w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
+                    <div id="bar-2" class="w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
+                    <div id="bar-3" class="w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
+                </button>
+
             </div>
         </div>
     </nav>
+    <div id="mobile-menu" class="fixed  inset-y-0 right-0 w-64 bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-40">
+        <div class="flex flex-col p-6 space-y-4 mt-20 font-semibold">
+            <a href="{{ route('home') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Accueil</a>
+            <a href="{{ route('tarifs') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Tarifs</a>
+            <a href="{{ route('services') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Services</a>
+            <a href="{{ route('nocturnes') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Nocturnes</a>
+            <a href="{{ route('reservation') }}" class="text-taxi py-2">Réservation</a>
+        </div>
+    </div>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar-1');
+        const bar2 = document.getElementById('bar-2');
+        const bar3 = document.getElementById('bar-3');
+
+        mobileMenuButton.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                bar1.classList.add('rotate-45', 'translate-y-2');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                bar1.classList.remove('rotate-45', 'translate-y-2');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2');
+            }
+        });
+    </script>
+
+    <!-- panier + reservation -->
+
+    <div id="floating-cart" class="fixed bottom-8 right-8 z-50 hidden transition-all duration-300 transform translate-x-20 opacity-0">
+        <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
+
+            <span>Réserver un Taxi </span>
+        </a>
+    </div>
 
     <main class="min-h-screen">
         @yield('content')
@@ -50,7 +99,7 @@
 
     
                         
-    <footer class="bg-gray-900 text-white mt-12">
+    <footer class="bg-gray-900 text-white mt-12 ">
         <div class="bg-gray-800 py-2 border-b border-gray-800"></div>
         <div class="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:justify-between md:gap-8">
