@@ -11,7 +11,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <nav class="bg-gray-900 text-black sticky top-0  z-50 shadow-lg">
+    <nav class="bg-gray-900 text-black  top-0  z-50 shadow-lg">
         <div class="h-10 bg-blue-700/20 flex items-center justify-between px-6">
             <div class="flex gap-2">
                 <a href="https://www.facebook.com/taxitonywaterloo/" target="_blank"><img src="{{ asset('image/facebook.png') }}" alt="facebook" class="w-8 hover:scale-110 transition-transform"></a>
@@ -34,11 +34,11 @@
                     <a href="{{ route('tarifs') }}" class="my-auto text-white hover:text-taxi transition">Tarifs</a>
                     <a href="{{ route('services') }}" class="my-auto text-white hover:text-taxi transition">Nos services</a>
                     <a href="{{ route('nocturnes') }}" class="my-auto text-white hover:text-taxi transition">Transports nocturnes</a>
-                    <a href="{{ route('reservation') }}" class="my-auto  text-white hover:text-taxi transition">Reservation</a>
-                </div>    
-                
                     
-                    <a href="#reservation" class="bg-taxi text-black flex px-1 py-1 rounded font-bold hover:bg-yellow-500 transition"><img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6"> <span class="text-sm mt-auto" id="cart-count">0</span></a>
+                </div>    
+                <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
+                    <span>Réserver un taxi</span>
+                </a>                    
                 
 
                 <!-- Mobile menu button -->
@@ -57,7 +57,7 @@
             <a href="{{ route('tarifs') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Tarifs</a>
             <a href="{{ route('services') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Services</a>
             <a href="{{ route('nocturnes') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Nocturnes</a>
-            <a href="{{ route('reservation') }}" class="text-taxi py-2">Réservation</a>
+            <a href="{{ route('reservation') }}" class="text-taxi py-2">Réserver un taxi</a>
         </div>
     </div>
     <script>
@@ -86,10 +86,11 @@
 
     <!-- panier + reservation -->
 
-    <div id="floating-cart" class="fixed bottom-8 right-8 z-50 hidden transition-all duration-300 transform translate-x-20 opacity-0">
-        <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
+    <div id="floating-cart" class="fixed bottom-8 right-8 z-50 hidden transition-all duration-300 transform translate-x-20 opacity-0 flex space-x-4">
+        <a href="#reservation" class="bg-taxi rounded-xl text-black flex px-1 py-1 rounded font-bold hover:bg-yellow-500 hover:shadow-lg transition"><img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6"> <span class="text-sm m-auto" id="cart-count">0</span></a>
 
-            <span>Réserver un Taxi </span>
+        <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
+            <span>Réserver un taxi </span>
         </a>
     </div>
 
@@ -119,7 +120,7 @@
                     <ul class="space-y-2 text-sm text-gray-300">
                         <li><a href="{{ route('emploi') }}" class="hover:text-taxi transition">Offres d'emploi</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-taxi transition">Contact</a></li>
-                        <li><a href="{{ route('reservation') }}" class="hover:text-taxi transition">Réserver une course</a></li>
+                        <li><a href="{{ route('reservation') }}" class="hover:text-taxi transition">Réserver un taxi</a></li>
                         <li>
                             @auth
                                 <a href="/dashboard" class="my-auto hover:text-taxi text-gray-300 transition">Admin</a>
