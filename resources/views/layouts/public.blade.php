@@ -26,7 +26,7 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 items-center">
-                <a class="flex-shrink-0 font-bold text-xl text-taxi uppercase" href="{{ route('home') }}">
+                <a class="flex-shrink-0 font-bold text-2xl text-taxi uppercase" href="{{ route('home') }}">
                     {{ config('app.name', 'Taxi Tony') }}
                 </a>
                 <div class="hidden md:flex space-x-6  text-md font-medium px-4">
