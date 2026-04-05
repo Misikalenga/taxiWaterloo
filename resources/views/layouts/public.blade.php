@@ -11,7 +11,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <nav class="bg-gray-900 text-black  top-0  z-50 shadow-lg">
+    <nav class="absolute bg-gray-900 text-black w-full top-0  z-50 shadow-lg">
         <div class="h-10 bg-blue-700/20 flex items-center justify-between px-6">
             <div class="flex gap-2">
                 <a href="https://www.facebook.com/taxitonywaterloo/" target="_blank"><img src="{{ asset('image/facebook.png') }}" alt="facebook" class="w-8 hover:scale-110 transition-transform"></a>
@@ -36,7 +36,7 @@
                     <a href="{{ route('nocturnes') }}" class="my-auto text-white hover:text-taxi transition">Transports nocturnes</a>
                     
                 </div>    
-                <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
+                <a href="{{ route('reservation')}}" class="hidden md:flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
                     <span>Réserver un taxi</span>
                 </a>                    
                 
@@ -86,7 +86,7 @@
 
     <!-- panier + reservation -->
 
-    <div id="floating-cart" class="fixed bottom-8 right-8 z-50 hidden transition-all duration-300 transform translate-x-20 opacity-0 flex space-x-4">
+    <div id="floating-cart" class="fixed bottom-8 right-8 z-80 hidden transition-all duration-300 transform translate-x-20 opacity-0 flex space-x-4">
         <a href="#reservation" class="bg-taxi rounded-xl text-black flex px-1 py-1 rounded font-bold hover:bg-yellow-500 hover:shadow-lg transition"><img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6"> <span class="text-sm m-auto" id="cart-count">0</span></a>
 
         <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
