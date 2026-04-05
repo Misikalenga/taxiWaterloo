@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section id="nos-services" class="py-16 bg-white">
+    <section id="nos-services" class="py-16 bg-white ">
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-dark mb-8 text-center uppercase">Nos Services en Détails</h2>
             <div class="space-y-6 text-gray-600">

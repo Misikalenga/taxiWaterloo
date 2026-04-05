@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section id="transports-nocturnes" class="py-16 bg-dark text-white">
+    <section id="transports-nocturnes" class="py-16 bg-dark text-white ">
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-taxi mb-8 text-center uppercase">Transport Nocturne</h2>
             <p class="text-center text-gray-300 mb-10 text-lg">Rentrez chez vous en toute sérénité avec Taxi Tony.</p>

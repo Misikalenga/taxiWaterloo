@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section id="reservation" class="py-16 bg-taxi">
+    <section id="reservation" class="py-16 bg-taxi ">
         <div class="max-w-3xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-dark mb-8 text-center uppercase">Votre Réservation (Panier)</h2>
             

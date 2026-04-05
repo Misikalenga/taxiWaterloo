@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section id="tarifs" class="py-16 bg-gray-100">
+    <section id="tarifs" class="py-16 bg-gray-100 ">
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-dark mb-8 text-center uppercase">Nos Tarifs & Réservations</h2>
             <p class="text-center text-gray-600 mb-10">Sélectionnez votre trajet pour l'ajouter à votre réservation en ligne.</p>

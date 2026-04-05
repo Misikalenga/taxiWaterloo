@@ -36,9 +36,10 @@
                     <a href="{{ route('nocturnes') }}" class="my-auto text-white hover:text-taxi transition">Transports nocturnes</a>
                     
                 </div>    
-                <a href="{{ route('reservation')}}" class="hidden md:flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
-                    <span>Réserver un taxi</span>
-                </a>                    
+                    <a href="{{ route('reservation') }}" class="group hidden md:block hover:outline outline-2 outline-gray-950 -outline-offset-1 relative inline-flex items-center justify-center px-4 py-2 bg-taxi text-black hover:text-taxi font-bold transition-all overflow-hidden rounded-xl shadow-2xl active:scale-95 md:w-auto">
+                        <span class="relative z-10 text-md">Réservez<span class="hidden lg:inline">  votre  taxi </span></span>
+                        <div class="absolute inset-0 bg-gray-950 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
+                    </a>            
                 
 
                 <!-- Mobile menu button -->
@@ -87,14 +88,18 @@
     <!-- panier + reservation -->
 
     <div id="floating-cart" class="fixed bottom-8 right-8 z-[9000] hidden transition-all duration-300 transform translate-x-20 opacity-0 flex space-x-4">
-        <a href="#reservation" class="bg-taxi rounded-xl text-black flex px-2 py-1 rounded font-bold hover:bg-yellow-500 hover:shadow-lg transition"><img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6"> <span class="text-sm mt-1" id="cart-count">0</span></a>
-
-        <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
-            <span>Réserver un taxi </span>
+        <a href="{{ route('reservation') }}" class="group relative inline-flex items-center justify-center px-3 py-2 bg-taxi font-bold transition-all overflow-hidden rounded-xl shadow-2xl active:scale-95 hover:border-gray-900 border-2 border-taxi  md:w-auto"> 
+            <img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6 relative z-10"> 
+            <span class="text-sm mt-1 relative z-10 text-black" id="cart-count">
+                0
+            </span>
+        </a>
+        <a href="{{ route('reservation') }}" class="group hover:border-gray-900 border-2 border-taxi  relative inline-flex items-center justify-center px-4 py-2 bg-taxi text-black font-bold transition-all overflow-hidden rounded-xl shadow-2xl active:scale-95 md:w-auto">
+            <span class="relative z-10 text-md">Réservez votre taxi</span>
         </a>
     </div>
 
-    <main class="min-h-screen z-10 relative">
+    <main class="min-h-screen z-10 relative mt-24">
         @yield('content')
     </main>
 
