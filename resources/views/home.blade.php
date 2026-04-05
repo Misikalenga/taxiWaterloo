@@ -28,7 +28,7 @@
             </div>
             <div class="absolute -bottom-2 left-0 w-full overflow-hidden leading-[0]">
                 <svg class="relative block w-[calc(100%+1.3px)] h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M0,0V120H1200V0C1123.15,48,1031.42,76.53,923.63,88.7c-157.14,17.74-279.4-23.7-418.51-40.45C337.33,26.47,175.76,46.12,0,0Z" fill="#000000"></path>
+                    <path d="M0,0V120H1200V0C1123.15,48,1031.42,76.53,923.63,88.7c-157.14,17.74-279.4-23.7-418.51-40.45C337.33,26.47,175.76,46.12,0,0Z" fill="#111827"></path>
                 </svg>
             </div>
         </div>
@@ -36,7 +36,7 @@
 </section>
     <!-- hero fin -->
     <!-- section 2 -->
-<section class="bg-black py-20 md:py-32">
+<section class="bg-gray-900 pt-20 md:pt-32">
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-5">
+            <div class="lg:col-span-5 pb-20 md:pb-32">
                 <div class="bg-white/[0.03] p-10 border border-white/5 relative overflow-hidden">
                     <div class="absolute -right-4 -bottom-4 text-yellow-500/10 hover:-translate-x-5 transition-all duration-500 text-8xl font-bold select-none">TAXI</div>
                     
@@ -105,26 +105,24 @@
 
         </div>
     </div>
+    <div class="flex justify-center relative">
+        <span class="inline-block bg-white translate-y-1/2 relative z-20 border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-md font-bold px-4 py-2 rounded-full shadow-sm">
+            Pourquoi nous choisir ?
+        </span>
+    </div>   
 </section>
 
 <!-- section 3 -->
-<section class="bg-gray-50 py-24 md:py-32  overflow-hidden">
-        <div class="flex justify-center">
-            <span class="inline-block bg-white border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-[10px] font-bold px-4 py-2 rounded-full shadow-sm">
-                Pourquoi nous choisir ?
-            </span>
-        </div>    
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-taxi/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"></div>
+<section class="bg-gray-50 py-24 md:py-32 overflow-x-hidden relative">
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[1000px] bg-taxi/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none z-0"></div>
 
-    <div class="max-w-6xl mx-auto px-6  z-10 text-center">
+    <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
         
-        <div class="space-y-6 mb-16" data-aos="fade-up">
-            <span class="inline-block bg-white border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-[10px] font-bold px-4 py-2 rounded-full shadow-sm">
-                Pourquoi nous choisir ?
-            </span>
-            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+        <div class="space-y-6 mb-16">
+            <h2 class="text-3xl md:text-6xl font-bold text-gray-900 tracking-tight leading-tight uppercase">
                 L'excellence du transport <br>
-                <span class="text-taxi underline decoration-gray-900/10 decoration-8 underline-offset-8">à votre service</span>
+                <span class="text-taxi underline decoration-gray-900/10 md:decoration-8 underline-offset-8">à votre service</span>
             </h2>
             <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">
                 Plus qu'un simple taxi, nous sommes votre partenaire mobilité pour tous vos déplacements à Waterloo et Rhode-Saint-Genèse.
@@ -189,24 +187,23 @@
             </div>
         </div>
 
-        <!-- avis swiper -->
-        <div class="space-y-6 mb-16" data-aos="fade-up">
-            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
-                 L'expérience client est <br>
-                <span class="text-taxi underline decoration-gray-900/10 decoration-8 underline-offset-8">au cœur de nos trajets</span>
+        <div class="space-y-6 mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight uppercase">
+                L'expérience client est <br>
+                <span class="text-taxi underline decoration-gray-900/10 md:decoration-8 underline-offset-8">au cœur de nos trajets</span>
             </h2>
             <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-                La satisfaction de nos passagers est notre plus belle récompense. Découvrez les témoignages de ceux qui, chaque jour, nous confient leurs déplacements.
+                La satisfaction de nos passagers est notre plus belle récompense. Découvrez les témoignages de ceux qui nous font confiance.
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto px-4 group">
-            <div id="custom-slider" class="flex overflow-x-hidden scroll-smooth snap-x snap-mandatory">
+        <div class="max-w-4xl mx-auto px-0 md:px-4 group overflow-hidden">
+            <div id="custom-slider" class="flex overflow-x-hidden scroll-smooth snap-x snap-mandatory w-full">
 
-                <div class="slide-item min-w-full snap-center px-4 cursor-pointer m-10">
-                    <div class="bg-white p-10 md:p-14 shadow-xl border border-gray-100 flex flex-col items-center space-y-6 rounded-[2.5rem] transition-transform active:scale-[0.98]">
-                        <div class="flex gap-1 text-taxi text-xl font-serif">★★★★★</div>
-                        <p class="text-gray-700 text-lg md:text-2xl font-light italic leading-relaxed text-center pointer-events-none">
+                <div class="slide-item min-w-full snap-center cursor-pointer py-10 px-2 md:px-4">
+                    <div class="bg-white p-8 md:p-14 shadow-xl border border-gray-100 flex flex-col items-center space-y-6 rounded-[2rem] md:rounded-[2.5rem] transition-transform active:scale-[0.98] mx-2">
+                        <div class="flex gap-1 text-taxi text-xl">★★★★★</div>
+                        <p class="text-gray-700 text-base md:text-2xl font-light italic leading-relaxed text-center pointer-events-none">
                             "Service impeccable pour mon transfert vers Zaventem. Ponctuel, voiture très propre et chauffeur d'une grande politesse. Je recommande Taxi Tony sans hésiter."
                         </p>
                         <div class="text-center border-t border-gray-100 pt-6 w-full pointer-events-none">
@@ -216,31 +213,31 @@
                     </div>
                 </div>
 
-                <div class="slide-item min-w-full snap-center px-4 cursor-pointer m-10">
-                    <div class="bg-white p-10 md:p-14 shadow-xl border border-gray-100 flex flex-col items-center space-y-6 rounded-[2.5rem] transition-transform active:scale-[0.98]">
-                        <div class="flex gap-1 text-taxi text-xl font-serif">★★★★★</div>
-                        <p class="text-gray-700 text-lg md:text-2xl font-light italic leading-relaxed text-center pointer-events-none">
+                <div class="slide-item min-w-full snap-center cursor-pointer py-10 px-2 md:px-4">
+                    <div class="bg-white p-8 md:p-14 shadow-xl border border-gray-100 flex flex-col items-center space-y-6 rounded-[2rem] md:rounded-[2.5rem] transition-transform active:scale-[0.98] mx-2">
+                        <div class="flex gap-1 text-taxi text-xl">★★★★★</div>
+                        <p class="text-gray-700 text-base md:text-2xl font-light italic leading-relaxed text-center pointer-events-none">
                             "Habituée des transports nocturnes, je me sens toujours en sécurité avec Tony. La réservation est simple et le chauffeur parlait parfaitement anglais."
                         </p>
                         <div class="text-center border-t border-gray-100 pt-6 w-full pointer-events-none">
                             <p class="text-gray-900 font-bold uppercase tracking-widest text-sm">Sarah L.</p>
-                            <p class="text-gray-400 text-[10px] uppercase tracking-widest mt-1">Rhode-Saint-Genèse — Gare du Midi</p>
+                            <p class="text-gray-400 text-[10px] uppercase tracking-widest mt-1">Rhode-Saint-Genèse — Midi</p>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <div id="slider-dots" class="flex justify-center gap-2 mt-10">
+            <div id="slider-dots" class="flex justify-center gap-2 mt-4">
                 <button class="dot-btn h-3 rounded-full transition-all duration-500 bg-taxi w-8" data-index="0"></button>
                 <button class="dot-btn h-3 rounded-full transition-all duration-500 bg-gray-300 w-3" data-index="1"></button>
             </div>
         </div>
-        <!-- fin swiper -->
-        <div class="pt-10 flex flex-col md:flex-row gap-8 justify-center items-center">
-            <a href="{{ route('reservation') }}" class="group  inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-xl shadow-2xl active:scale-95">
-                <span class=" z-10 uppercase tracking-[0.2em] text-xs">Réserver mon trajet</span>
-                <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 -z-0"></div>
+
+        <div class="pt-16 flex flex-col  gap-8 justify-center items-center">
+            <a href="{{ route('reservation') }}" class="group relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-xl shadow-2xl active:scale-95 w-full md:w-auto">
+                <span class="relative z-10 uppercase tracking-[0.2em] text-xs">Réserver mon trajet</span>
+                <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
             </a>
             
             <div class="flex flex-col items-center md:items-start group cursor-pointer">
@@ -252,10 +249,11 @@
         </div>
 
     </div>
+    
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('custom-slider');
     const dotBtns = document.querySelectorAll('.dot-btn');
     const slides = document.querySelectorAll('.slide-item');
@@ -263,6 +261,7 @@
     const totalSlides = dotBtns.length;
     let autoPlayInterval;
 
+    // Met à jour visuellement les points (Tailwind classes)
     function updateDotStyles(activeIndex) {
         dotBtns.forEach((btn, i) => {
             if (i === activeIndex) {
@@ -275,6 +274,7 @@
         });
     }
 
+    // Déplace le scroll vers la slide demandée
     function goToSlide(index) {
         currentIndex = index;
         slider.scrollTo({
@@ -298,7 +298,7 @@
         startAutoPlay();
     }
 
-    // --- NOUVEAU : Clic sur la slide elle-même ---
+    // Clic sur une slide pour passer à la suivante
     slides.forEach((slide) => {
         slide.addEventListener('click', () => {
             nextSlide();
@@ -306,7 +306,7 @@
         });
     });
 
-    // Clic sur les points
+    // Clic sur les points de navigation
     dotBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
             const index = parseInt(btn.getAttribute('data-index'));
@@ -315,7 +315,7 @@
         });
     });
 
-    // Synchronisation au scroll manuel
+    // Synchronisation si l'utilisateur swipe au doigt (mobile)
     slider.addEventListener('scroll', () => {
         const index = Math.round(slider.scrollLeft / slider.clientWidth);
         if (index !== currentIndex) {
@@ -328,29 +328,99 @@
 });
 </script>
 <!-- section 4 -->
-<section class="bg-gray-900 py-20 md:py-32 border-t border-white/5">
-    <div class="max-w-6xl mx-auto px-6 text-center">
+<section class="bg-gray-900 border-t border-white/5 relative">
+    <div class="flex justify-center relative">
+        <span class="inline-block bg-white -translate-y-1/2 relative z-30 border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-md font-bold px-4 py-2 rounded-full shadow-sm">
+            Service Global
+        </span>
+    </div>  
 
+    <div class="max-w-6xl mx-auto px-6 relative z-10 pt-16 md:pt-32 pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 relative">
+            
+            <div class="relative">
+                <div class="absolute -top-10 -left-6 text-8xl font-black text-white/[0.02] select-none pointer-events-none">01</div>
+                <div class="space-y-8 relative z-10">
+                    <h3 class="text-white text-xl md:text-2xl font-bold uppercase tracking-wide border-b border-taxi/30 pb-6 leading-tight">
+                        Du petit trajet aux déplacements <br>
+                        <span class="text-gray-500  italic">nationaux et internationaux</span>
+                    </h3>
+                    <div class="space-y-6 text-gray-400  leading-relaxed text-sm md:text-base">
+                        <p>Que vous souhaitiez vous rendre à un rendez-vous en ville, à l’hôpital, à l’aéroport ou encore rentrer chez vous la nuit sans aucun risque, nous sommes à votre disposition.</p>
+                        <p>Nous nous déplaçons à travers la Belgique (Waterloo, Lasne, Rhode-Saint-Genèse, La Hulpe, Braine-l’Alleud, Lillois-Witterzée, Nivelles, Alsemberg, Dworp, Braine-le-Château, Braine-le-Comte, Genval, etc.), mais nous pouvons également effectuer des transports à l’international, notamment en France et aux Pays-Bas. N’hésitez pas à nous faire part de vos besoins concernant d’autres pays ; nous vous répondrons rapidement.</p>
+                    </div>
+                </div>
+            </div>
 
-        <p class="text-lg text-gray-200 mb-10 text-center max-w-3xl mx-auto">
-            Notre compagnie de taxis Taxi Tony est située à Rhode-Saint-Genèse, à côté de Waterloo. 
-            Avec plus de 25 ans d'expérience, notre équipe est prête jour et nuit.
-        </p>
+            <div class="relative">
+                <div class="absolute -top-10 -left-6 text-8xl font-black text-white/[0.02] select-none pointer-events-none">02</div>
+                <div class="space-y-8 relative z-10">
+                    <h3 class="text-white text-xl md:text-2xl font-bold uppercase tracking-wide border-b border-taxi/30 pb-6 leading-tight">
+                        Un service professionnel <br>
+                        <span class="text-gray-500  italic">pour tous</span>
+                    </h3>
+                    <div class="space-y-6 text-gray-400  leading-relaxed text-sm md:text-base">
+                        <p>Nous proposons un service de shuttle pour l’aéroport afin que vous arriviez à l’heure pour votre vol sans vous inquiéter de votre stationnement.</p>
+                        <p>Nous sommes également formés pour transporter les personne âgées à bon port. Nous pouvons alors rassurer la famille et les proches lors de leur arrivée.</p>
+                        <p>Vous avez besoin d’un service VIP ? Faites-nous part de vos attentes. Nos véhicules (berlines et monovolumes), spacieux et modernes, vous assurent un trajet dans un confort absolu.</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="bg-taxi text-dark rounded-2xl p-8 text-center shadow-2xl transform hover:scale-105 transition duration-300">
-            <h2 class="text-2xl font-bold mb-2">Commandez votre taxi 7j/7 et 24h/24 !</h2>
-            <p class="text-3xl font-black mb-4">0496 30 60 40</p>
-            <p class="text-sm opacity-90 italic">Communication fluide en français et anglais.</p>
+        </div>
+    </div>
+
+    <div class="bg-gray-50 relative z-10 py-20 md:py-32 overflow-hidden border-t border-gray-200">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-200/40 text-[15rem] font-black pointer-events-none uppercase tracking-tighter">
+            Tony
         </div>
 
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-white/10">
-                <h3 class="text-xl font-bold mb-3 border-b-2 border-taxi pb-2 text-taxi">Du petit trajet à l'international</h3>
-                <p class="text-gray-300">Que ce soit pour un rendez-vous en ville, l'hôpital, l'aéroport ou rentrer chez vous la nuit, nous couvrons la Belgique, la France et les Pays-Bas.</p>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+                
+                <div class="max-w-2xl">
+                    <div class="w-12 h-1 bg-taxi mb-8"></div>
+                    <p class="text-2xl md:text-3xl text-gray-800 font-light leading-snug tracking-tight">
+                        Notre compagnie de taxis <span class="text-black font-bold">Taxi Tony</span> est située à <span class="italic">Rhode-Saint-Genèse</span>, à côté de Waterloo. 
+                        Avec plus de <span class="text-gray-500 underline decoration-taxi decoration-4 underline-offset-4">25 ans d'expérience</span>, notre équipe est prête jour et nuit.
+                    </p>
+                </div>
+
+            <div class="w-full lg:w-auto">
+    <div class="space-y-8">
+        <div class="space-y-1">
+            <h2 class="text-black text-sm font-bold uppercase tracking-[0.3em]">Commandez votre taxi</h2>
+            <p class="text-gray-400 text-xs italic tracking-widest uppercase">7j/7 et 24h/24 !</p>
+        </div>
+        
+        <a href="tel:+32496306040" class="block text-4xl md:text-5xl font-black text-gray-900 transition-all duration-300 tracking-tighter hover:-translate-y-1">
+            0496 30 60 40
+        </a>
+
+        <div class="space-y-3 border-l-2 border-gray-100 pl-6">
+            <div class="flex items-center gap-3">
+                <svg class="w-4 h-4 text-taxi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <p class="text-gray-600 text-sm font-medium tracking-wide">Rue François Libert 27, 1410 Waterloo</p>
             </div>
-            <div class="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-white/10">
-                <h3 class="text-xl font-bold mb-3 border-b-2 border-taxi pb-2 text-taxi">Un service professionnel</h3>
-                <p class="text-gray-300">Service shuttle aéroport, transport de personnes âgées et service VIP dans des berlines ou monovolumes pour un confort absolu.</p>
+            <div class="flex items-center gap-3">
+                <svg class="w-4 h-4 text-taxi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <a href="mailto:taxitony@live.com" class="text-gray-600 text-sm font-medium hover:-translate-y-1 transition-all duration-300 tracking-tighte">taxitony@live.com</a>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="flex items-center gap-4">
+                <span class="h-px w-8 bg-taxi"></span>
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest font-bold">Communication fluide : Français & Anglais</p>
+            </div>
+
+            <a href="mailto:taxitony@live.com" class="inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white text-xs uppercase tracking-[0.2em] font-bold rounded-none hover:bg-taxi hover:text-black transition-all duration-300 shadow-xl">
+                Contactez-nous
+            </a>
+        </div>
+    </div>
+</div>
+
             </div>
         </div>
     </div>

@@ -86,21 +86,25 @@
 
     <!-- panier + reservation -->
 
-    <div id="floating-cart" class="fixed bottom-8 right-8 z-80 hidden transition-all duration-300 transform translate-x-20 opacity-0 flex space-x-4">
-        <a href="#reservation" class="bg-taxi rounded-xl text-black flex px-1 py-1 rounded font-bold hover:bg-yellow-500 hover:shadow-lg transition"><img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6"> <span class="text-sm m-auto" id="cart-count">0</span></a>
+    <div id="floating-cart" class="fixed bottom-8 right-8 z-[9000] hidden transition-all duration-300 transform translate-x-20 opacity-0 flex space-x-4">
+        <a href="#reservation" class="bg-taxi rounded-xl text-black flex px-2 py-1 rounded font-bold hover:bg-yellow-500 hover:shadow-lg transition"><img src="{{ asset('image/panier.png') }}" alt="Panier" class="w-6 h-6"> <span class="text-sm mt-1" id="cart-count">0</span></a>
 
         <a href="{{ route('reservation')}}" class="flex items-center bg-taxi text-black px-4 py-2 rounded-xl font-bold shadow-2xl hover:bg-yellow-500 hover:shadow-lg transition">
             <span>Réserver un taxi </span>
         </a>
     </div>
 
-    <main class="min-h-screen">
+    <main class="min-h-screen z-10 relative">
         @yield('content')
     </main>
 
+
+
+
+
     
                         
-    <footer class="bg-gray-900 text-white mt-12 ">
+    <footer class="bg-gray-900 text-white ">
         <div class="bg-gray-800 py-2 border-b border-gray-800"></div>
         <div class="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:justify-between md:gap-8">
