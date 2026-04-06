@@ -3,12 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\TarifsController;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::view('/tarifs', 'tarifs')->name('tarifs');
+Route::get('/tarifs', [TarifsController::class, 'tarifs'])->name('tarifs');
 Route::view('/services', 'services')->name('services');
 Route::view('/nocturnes', 'nocturnes')->name('nocturnes');
 Route::view('/emploi', 'emploi')->name('emploi');
