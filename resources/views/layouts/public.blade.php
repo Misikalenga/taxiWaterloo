@@ -100,21 +100,119 @@
     </div>
 
     <main class="min-h-screen z-10 relative mt-24">
+
+        <!-- Hero Section -->
+        @if(Route::currentRouteName() !== 'home')
+            <section id="accueil" class ="bg-gray-950 text-white">
+
+                <div class="relative py-40 bg-cover bg-center bg-fixed" 
+                    style="background-image:
+                        @if(Route::currentRouteName() === 'tarifs')
+                            url('{{ asset('image/tarifs.png') }}')
+                        @elseif(Route::currentRouteName() === 'services')
+                            url('{{ asset('image/services.png') }}')
+                        @elseif(Route::currentRouteName() === 'nocturnes')
+                            url('{{ asset('image/nocturnes.png') }}')
+                        @elseif(Route::currentRouteName() === 'emploi')
+                            url('{{ asset('image/emploi.png') }}')
+                        @elseif(Route::currentRouteName() === 'contact')
+                            url('{{ asset('image/contact.png') }}')
+                        @elseif(Route::currentRouteName() === 'reservation')
+                            url('{{ asset('image/reservation.png') }}')
+                        @endif
+                    ;">
+                    <div class="absolute inset-0 bg-black/10"></div>
+                </div>
+
+                <div class="flex justify-center w-full absolute">
+                    <span class="inline-block bg-white -translate-y-1/2 relative z-30 border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-md font-bold px-4 py-2 rounded-full shadow-sm">
+                        {{ Route::currentRouteName() }}
+                    </span>
+                </div>
+            </section>
+        @endif
+        <!-- hero fin -->
+
         @yield('content')
     </main>
 
+    @if (Route::currentRouteName() !== 'contact')
+        <!-- contact -->
+        <section class="bg-gray-900 relative">
+            <div class="flex justify-center relative">
+                <span class="inline-block bg-white translate-y-1/2 relative z-30 border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-md font-bold px-4 py-2 rounded-full shadow-sm">
+                    Contactez-nous
+                </span>
+            </div>  
+            <div class="bg-gray-50 relative z-10 py-20 md:py-32 overflow-hidden border-t border-gray-200">
+
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-200/40 text-[15rem] font-black pointer-events-none uppercase tracking-tighter">
+                    Tony
+                </div>
+
+                <div class="max-w-6xl mx-auto px-6 relative z-10">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+
+                        <div class="max-w-2xl">
+                            <div class="w-12 h-1 bg-taxi mb-8"></div>
+                            <p class="text-2xl md:text-3xl text-gray-800 font-light leading-snug tracking-tight">
+                                Notre compagnie de taxis <span class="text-black font-bold">Taxi Tony</span> est située à <span class="italic">Rhode-Saint-Genèse</span>, à côté de Waterloo. 
+                                Avec plus de <span class="text-gray-500 underline decoration-taxi decoration-4 underline-offset-4">25 ans d'expérience</span>, notre équipe est prête jour et nuit.
+                            </p>
+                        </div>
+
+                        <div class="w-full lg:w-auto">
+                            <div class="space-y-8">
+                                <div class="space-y-1">
+                                    <h2 class="text-black text-sm font-bold uppercase tracking-[0.3em]">Commandez votre taxi</h2>
+                                    <p class="text-gray-400 text-xs italic tracking-widest uppercase">7j/7 et 24h/24 !</p>
+                                </div>
+
+                                <a href="tel:+32496306040" class="block text-4xl md:text-5xl font-black text-gray-900 transition-all duration-300 tracking-tighter hover:scale-105">
+                                    0496 30 60 40
+                                </a>
+
+                                <div class="space-y-3 border-l-2 border-gray-100 pl-6">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-taxi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                        <p class="text-gray-600 text-sm font-medium tracking-wide">Rue François Libert 27, 1410 Waterloo</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-taxi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                        <a href="mailto:taxitony@live.com" class="text-gray-600 text-sm font-medium hover:scale-105 transition-all duration-300 tracking-tighte">taxitony@live.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4">
+                                        <span class="h-px w-8 bg-taxi"></span>
+                                        <p class="text-gray-500 text-[10px] uppercase tracking-widest font-bold">Communication fluide : Français & Anglais</p>
+                                    </div>
+
+                                    <a href="{{ route('contact') }}" class="group hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-4 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-xl shadow-2xl active:scale-95 w-full md:w-auto">
+                                        <span class="relative z-10 uppercase tracking-[0.2em] text-md">Contactez-nous</span>
+                                        <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif  
 
 
 
 
-    
+    <!-- Footer -->
                         
     <footer class="bg-gray-900 text-white ">
         <div class="bg-gray-800 py-2 border-b border-gray-800"></div>
         <div class="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:justify-between md:gap-8">
+            <div class=" grid grid-cols-2 md:flex md:justify-between md:gap-8">
 
-                <div class="w-64">
+                <div class="col-span-2 w-64 mb-8 md:mb-0">
                     <a class="text-taxi font-bold text-xl mb-4 uppercase" href="{{ route('home') }}">
                         {{ config('app.name', 'Taxi Tony') }}
                     </a>
@@ -124,7 +222,7 @@
                     </p>
                 </div>
 
-                <div>
+                <div class="mb-8 md:mb-0">
                     <h3 class="text-lg font-semibold mb-4">Navigation</h3>
                     <ul class="space-y-2 text-sm text-gray-300">
                         <li><a href="{{ route('emploi') }}" class="hover:text-taxi transition">Offres d'emploi</a></li>
@@ -140,7 +238,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="mb-8 md:mb-0">
                     <h3 class="text-lg font-semibold mb-4">Contact</h3>
                     <ul class="space-y-3 text-sm text-gray-300">
                         <li class="flex items-center">
@@ -157,7 +255,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="mb-8 md:mb-0">
                     <h3 class="text-lg font-semibold mb-4">Suivez-nous</h3>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/taxitonywaterloo/" target="_blank"><img src="{{ asset('image/facebook.png') }}" alt="facebook" class="w-8 hover:scale-110 transition-transform"></a>
