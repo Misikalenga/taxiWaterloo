@@ -139,8 +139,8 @@
     @if (Route::currentRouteName() !== 'contact')
         <!-- contact -->
         <section class="bg-gray-900 relative">
-            <div class="flex justify-center relative">
-                <span class="inline-block bg-white translate-y-1/2 relative z-30 border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-md font-bold px-4 py-2 rounded-full shadow-sm">
+            <div class="flex justify-center w-full absolute">
+                <span class="inline-block bg-white -translate-y-1/2 relative z-30 border border-gray-200 text-gray-500 uppercase tracking-[0.3em] text-md font-bold px-4 py-2 rounded-full shadow-sm">
                     Contactez-nous
                 </span>
             </div>  
