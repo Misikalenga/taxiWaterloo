@@ -147,7 +147,7 @@
             <div class="bg-gray-50 relative z-10 py-20 md:py-32 overflow-hidden border-t border-gray-200">
 
                 <div class="absolute right-0 top-1/2 -translate-y-1/2  text-gray-200/40 text-[15rem] font-black pointer-events-none uppercase tracking-tighter">
-                    Tony
+                    Taxi
                 </div>
 
                 <div class="max-w-6xl mx-auto px-6 relative z-10">
@@ -156,7 +156,7 @@
                         <div class="max-w-2xl">
                             <div class="w-12 h-1 bg-taxi mb-8"></div>
                             <p class="text-2xl md:text-3xl text-gray-800 font-light leading-snug tracking-tight">
-                                Notre compagnie de taxis <span class="text-black font-bold">Taxi Tony</span> est située à <span class="italic">Rhode-Saint-Genèse</span>, à côté de Waterloo. 
+                                Notre compagnie de taxis <span class="text-black font-bold">{{config('app.name')}}</span> est située à <span class="italic">Rhode-Saint-Genèse</span>, à côté de Waterloo. 
                                 Avec plus de <span class="text-gray-500 underline decoration-taxi decoration-4 underline-offset-4">25 ans d'expérience</span>, notre équipe est prête jour et nuit.
                             </p>
                         </div>

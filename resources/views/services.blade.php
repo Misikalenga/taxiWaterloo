@@ -39,7 +39,7 @@
                             Vous vous déplacez <span class="text-taxi font-medium italic">en groupe</span> ? Nous sommes également aptes à vous prendre en charge ! Précisez-nous le nombre de personnes lors de votre réservation.
                         </p>
                     </div>
-                    <div class="mt-8 pt-8 border-t border-white/5 text-sm italic text-gray-500">
+                    <div class="mt-8 pt-8 border-t border-white/5 text-sm italic text-gray-400">
                         Toujours à votre écoute, nous adaptons sans cesse notre offre à vos demandes.
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="relative md:hidden z-10">
-                        <a href="tel:+32496306040" class="group-hover:outline outline-2 outline-black -outline-offset-1 group-hover:text-black relative inline-flex items-center justify-center px-8 py-4 bg-black text-white font-bold transition-all overflow-hidden rounded-xl shadow-xl active:scale-95 w-full">
+                        <a href="tel:+32496306040" class="group-hover:outline outline-3 outline-black -outline-offset-1 group-hover:text-black relative inline-flex items-center justify-center px-8 py-4 bg-black text-white font-bold transition-all overflow-hidden rounded-xl shadow-xl active:scale-95 w-full">
                             <span class="relative z-10 uppercase tracking-[0.2em] text-xs">Appeler</span>
                             <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
                         </a>
