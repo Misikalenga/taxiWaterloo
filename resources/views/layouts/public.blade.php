@@ -146,7 +146,7 @@
             </div>  
             <div class="bg-gray-50 relative z-10 py-20 md:py-32 overflow-hidden border-t border-gray-200">
 
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-200/40 text-[15rem] font-black pointer-events-none uppercase tracking-tighter">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2  text-gray-200/40 text-[15rem] font-black pointer-events-none uppercase tracking-tighter">
                     Tony
                 </div>
 
