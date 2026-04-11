@@ -10,7 +10,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 pt-20">
-            <div id="price-slider" class="flex overflow-x-auto gap-6 scroll-smooth  py-10 no-scrollbar">
+            <div id="price-slider" class="flex overflow-x-auto gap-6  py-10 no-scrollbar">
 
 
                 @foreach($prices as $price)
@@ -73,8 +73,8 @@
             if (!slider) return;
 
             let scrollInterval;
-            const scrollSpeed = 20; // Vitesse ajustée pour être fluide
-            const edgeSize = 200;  
+            const scrollSpeed = 10; // Vitesse ajustée pour être fluide
+            const edgeSize = 150;  
 
             // Fonction de vérification de la taille de l'écran
             const isDesktop = () => window.innerWidth >= 768;

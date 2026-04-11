@@ -18,15 +18,16 @@
                 <a href="https://wa.me/+32496306040" target="_blank"><img src="{{ asset('image/whatsapp.png') }}" alt="whatsapp" class="w-8 hover:scale-110 transition-transform"></a>
                 <a class="text-white my-auto active:text-taxi hover:scale-105 transition-transform" href="tel:+32496306040">+32 496 30 60 40</a>
             </div>
-            <div class="flex gap-4">
+            <div class="flex gap-2">
                 <a class="text-white hover:underline active:text-taxi" href="">fr</a>
                 <a class="text-white hover:underline active:text-taxi" href="">en</a>
                 <a class="text-white hover:underline active:text-taxi" href="">nl</a>
             </div>
+            </div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 items-center">
-                <a class="flex-shrink-0 font-bold text-2xl text-taxi uppercase" href="{{ route('home') }}">
+                <a class="flex-shrink-0 font-bold text-xl text-taxi uppercase" href="{{ route('home') }}">
                     {{ config('app.name', 'Taxi Tony') }}
                 </a>
                 <div class="hidden md:flex space-x-6  text-md font-medium px-4">
@@ -34,6 +35,7 @@
                     <a href="{{ route('tarifs') }}" class="my-auto text-white hover:text-taxi transition">Tarifs</a>
                     <a href="{{ route('services') }}" class="my-auto text-white hover:text-taxi transition">Nos services</a>
                     <a href="{{ route('nocturnes') }}" class="my-auto text-white hover:text-taxi transition">Transports nocturnes</a>
+                    <a href="{{ route('login') }}" class="my-auto text-white hover:text-taxi transition">Mon espace</a>
                     
                 </div>    
                     <a href="{{ route('reservation') }}" class="group hidden md:block hover:outline outline-2 outline-gray-950 -outline-offset-1 relative inline-flex items-center justify-center px-4 py-2 bg-taxi text-black hover:text-taxi font-bold transition-all overflow-hidden rounded-xl shadow-2xl active:scale-95 md:w-auto">
@@ -43,47 +45,68 @@
                 
 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1 focus:outline-none group">
-                    <div id="bar-1" class="w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
-                    <div id="bar-2" class="w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
-                    <div id="bar-3" class="w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
+                <button  class="menu-toggle md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1 focus:outline-none group">
+                    <div  class="bar-1 w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
+                    <div  class="bar-2 w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
+                    <div  class="bar-3 w-8 h-1 bg-white rounded-full transition-all duration-300"></div>
                 </button>
 
             </div>
         </div>
     </nav>
     <div id="mobile-menu" class="fixed  inset-y-0 right-0 w-64 bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-40">
+        <button  class="menu-toggle md:hidden absolute right-6 top-14 flex flex-col justify-center items-center w-10 h-10 space-y-1 focus:outline-none group">
+                <div  class="bar-1 w-8 h-1 bg-white rounded-full"></div>
+                <div  class="bar-2 w-8 h-1 bg-white rounded-full"></div>
+                <div  class="bar-3 w-8 h-1 bg-white rounded-full"></div>
+        </button>
         <div class="flex flex-col p-6 space-y-4 mt-20 font-semibold">
-            <a href="{{ route('home') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Accueil</a>
-            <a href="{{ route('tarifs') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Tarifs</a>
-            <a href="{{ route('services') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Services</a>
-            <a href="{{ route('nocturnes') }}" class="text-white hover:text-taxi py-2 border-b border-gray-800">Nocturnes</a>
-            <a href="{{ route('reservation') }}" class="text-taxi py-2">Réserver un taxi</a>
+            <a href="{{ route('home') }}" class="text-white pl-2 hover:text-taxi py-2 border-b border-gray-800">Accueil</a>
+            <a href="{{ route('tarifs') }}" class="text-white pl-2 hover:text-taxi py-2 border-b border-gray-800">Tarifs</a>
+            <a href="{{ route('services') }}" class="text-white pl-2 hover:text-taxi py-2 border-b border-gray-800">Services</a>
+            <a href="{{ route('nocturnes') }}" class="text-white pl-2 hover:text-taxi py-2 border-b border-gray-800">Nocturnes</a>
+            <a href="{{ route('login') }}" class="text-white pl-2 hover:text-taxi py-2 border-b border-gray-800">Mon Espace</a>
+            <a href="{{ route('reservation') }}" class="text-taxi pl-2 hover:text-black hover:bg-taxi transition-all duration-300 rounded-xl py-2">Réserver un taxi</a>
         </div>
     </div>
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const bar1 = document.getElementById('bar-1');
-        const bar2 = document.getElementById('bar-2');
-        const bar3 = document.getElementById('bar-3');
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggles = document.querySelectorAll('.menu-toggle');
+        const menu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('translate-x-full')) {
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
-                bar1.classList.add('rotate-45', 'translate-y-2');
-                bar2.classList.add('opacity-0');
-                bar3.classList.add('-rotate-45', '-translate-y-2');
-            } else {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('translate-x-full');
-                bar1.classList.remove('rotate-45', 'translate-y-2');
-                bar2.classList.remove('opacity-0');
-                bar3.classList.remove('-rotate-45', '-translate-y-2');
-            }
+        toggles.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. Basculer l'affichage du menu
+                const isOpen = menu.classList.contains('translate-x-0');
+                
+                if (isOpen) {
+                    menu.classList.replace('translate-x-0', 'translate-x-full');
+                } else {
+                    menu.classList.replace('translate-x-full', 'translate-x-0');
+                }
+
+                // 2. Animer les barres de TOUS les boutons simultanément
+                toggles.forEach(t => {
+                    const b1 = t.querySelector('.bar-1');
+                    const b2 = t.querySelector('.bar-2');
+                    const b3 = t.querySelector('.bar-3');
+
+                    if (!isOpen) {
+                        // Transformation en X
+                        b1.classList.add('rotate-45', 'translate-y-2');
+                        b2.classList.add('opacity-0');
+                        b3.classList.add('-rotate-45', '-translate-y-2');
+                    } else {
+                        // Retour au format Burger
+                        b1.classList.remove('rotate-45', 'translate-y-2');
+                        b2.classList.remove('opacity-0');
+                        b3.classList.remove('-rotate-45', '-translate-y-2');
+                    }
+                });
+            });
         });
-    </script>
+    });
+</script>
 
     <!-- panier + reservation -->
 
@@ -168,7 +191,7 @@
                                     <p class="text-gray-400 text-xs italic tracking-widest uppercase">7j/7 et 24h/24 !</p>
                                 </div>
 
-                                <a href="tel:+32496306040" class="block text-4xl md:text-5xl font-black text-gray-900 transition-all duration-300 tracking-tighter hover:scale-105">
+                                <a href="tel:+32496306040" class="block text-4xl pl-6 md:text-5xl font-black text-gray-900 transition-all duration-300 tracking-tighter hover:scale-105">
                                     0496 30 60 40
                                 </a>
 
@@ -232,7 +255,7 @@
                             @auth
                                 <a href="/dashboard" class="my-auto hover:text-taxi text-gray-300 transition">Admin</a>
                             @else
-                                <a href="/login" class="my-auto hover:text-taxi text-gray-300 transition ">Espace Chauffeur</a>
+                                <a href="/login" class="my-auto hover:text-taxi text-gray-300 transition ">Mon Espace</a>
                             @endauth
                         </li>
                     </ul>
