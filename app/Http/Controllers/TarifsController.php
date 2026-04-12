@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Price;
+use App\Services\PriceService;
 
 class TarifsController extends Controller
 {
-    public function tarifs()
+    public function tarifs(PriceService $priceService)
     {
         // On récupère tous les prix actifs depuis la BDD
-        $prices = Price::where('is_active', true)->get();
-
+        $prices = $priceService->getActivePrices();
+        
         // On envoie ces données à la vue 'tarifs.blade.php' (ou 'home')
         return view('tarifs', compact('prices'));
     }

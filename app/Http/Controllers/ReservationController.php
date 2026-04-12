@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\models\Resrvation;
+use App\Services\PriceService;
 
 class ReservationController extends Controller
 {
@@ -20,7 +21,7 @@ class ReservationController extends Controller
         ]);
 
         // sauvegarde de la réservation
-        Resevation::create([
+        Reservation::create([
             'name' => $request->name,
             'email' => $request->email,
             'reservation_date' => $request->reservation_date,
@@ -30,5 +31,14 @@ class ReservationController extends Controller
         // redirection avec un message de succès
         return back()->with('success', 'Votre réservation a bien été enregistrée');
 
+    }
+
+    public function reservation(PriceService $priceService)
+    {
+        // On récupère tous les prix actifs depuis la BDD
+        $prices = $priceService->getActivePrices();
+
+        // On envoie ces données à la vue 'reservation.blade.php'
+        return view('reservation', compact('prices'));
     }
 }

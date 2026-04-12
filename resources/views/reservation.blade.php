@@ -51,41 +51,15 @@
                 </div>
 
                 <div class="lg:col-span-7 bg-white/[0.02] border border-white/5 p-8 md:p-14 rounded-[2.5rem] shadow-2xl hover:border-taxi/30 transition-all duration-500">
-                    <form action="#" method="POST" class="space-y-6">
+                    <form id="reservation" action="#" method="POST" class="space-y-6">
 
                         <div class="space-y-2">
                             <label class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] ml-4">Choisissez votre forfait</label>
                             <div class="relative">
                                 <select name="trajet" class="w-full bg-gray-900 border border-white/10 text-white rounded-2xl p-4 appearance-none focus:outline-none focus:border-taxi transition-colors cursor-pointer">
-                                    <option value="immediate">Course immédiate — Au compteur</option>
-                                    <option value="waterloo-zaventem">Waterloo – Zaventem Airport — 65.00€</option>
-                                    <option value="zaventem-waterloo">Zaventem Airport – Waterloo — 65.00€</option>
-                                    <option value="waterloo-bruxelles">Waterloo – Bruxelles — 55.00€</option>
-                                    <option value="bruxelles-waterloo">Bruxelles - Waterloo — 55.00€</option>
-                                    <option value="waterloo-braine">Waterloo – Braine L’Alleud — 20.00€</option>
-                                    <option value="braine-waterloo">Braine l’Alleud – Waterloo — 20.00€</option>
-                                    <option value="waterloo-charleroi">Waterloo – Charleroi Airport — 78.00€</option>
-                                    <option value="braine-charleroi">Braine L’Alleud – Charleroi Airport — 75.00€</option>
-                                    <option value="charleroi-waterloo">Charleroi Airport – Waterloo — 78.00€</option>
-                                    <option value="lasne-zaventem">Lasne – Zaventem Airport — 60.00€</option>
-                                    <option value="charleroi-braine">Charleroi Airport – Braine L’Alleud — 75.00€</option>
-                                    <option value="zaventem-lasne">Zaventem Airport – Lasne — 65.00€</option>
-                                    <option value="zaventem-hulpe">Zaventem Airport – La Hulpe — 60.00€</option>
-                                    <option value="zaventem-chateau">Zaventem Airport – Braine-le-Château — 75.00€</option>
-                                    <option value="zaventem-braine">Zaventem Airport - Braine l'Alleud — 75.00€</option>
-                                    <option value="rhode-zaventem">Rhode-Saint-Genèse – Zaventem Airport — 70.00€</option>
-                                    <option value="zaventem-rhode">Zaventem Airport – Rhode-Saint-Genèse — 70.00€</option>
-                                    <option value="hulpe-zaventem">La Hulpe – Zaventem Airport — 60.00€</option>
-                                    <option value="braine-zaventem">Braine l'Alleud - Zaventem Airport — 75.00€</option>
-                                    <option value="lillois-zaventem">Lillois – Zaventem Airport — 70.00€</option>
-                                    <option value="zaventem-lillois">Zaventem Airport – Lillois — 70.00€</option>
-                                    <option value="chateau-zaventem">Braine-le-Château – Zaventem Airport — 75.00€</option>
-                                    <option value="lasne-charleroi">Lasne – Charleroi Airport — 80.00€</option>
-                                    <option value="charleroi-lasne">Charleroi Airport – Lasne — 80.00€</option>
-                                    <option value="rhode-charleroi">Rhode-Saint-Genèse – Charleroi Airport — 80.00€</option>
-                                    <option value="charleroi-rhode">Charleroi Airport - Rhode-Saint-Genèse — 80.00€</option>
-                                    <option value="waterloo-midi">Waterloo - Gare du Midi — 55.00€</option>
-                                    <option value="midi-waterloo">Gare du Midi - Waterloo — 60.00€</option>
+                                    @foreach($prices as $price)
+                                        <option value="{{ Str::slug($price->departure.'-vers-'.$price->destination) }}">{{ $price->departure }} → {{ $price->destination }} @if(is_numeric($price->amount)) - {{ $price->amount }}€ @endif</option>
+                                    @endforeach
                                 </select>
                                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-taxi">
                                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -96,11 +70,11 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="space-y-2">
                                 <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Nom complet</label>
-                                <input type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                <input id="name" type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Téléphone</label>
-                                <input type="tel" placeholder="04XX XX XX XX" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                <input id="tel"type="tel" placeholder="04XX XX XX XX" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
                             </div>
                         </div>
 
@@ -116,7 +90,14 @@
                         </div>
 
                         <div class="pt-6">
-                            <button type="submit" class="group hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-2xl shadow-2xl active:scale-95 w-full">
+                            <button id="next" class="group hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-2xl shadow-2xl active:scale-95 w-full">
+                                <span class="relative z-10 uppercase tracking-[0.2em] text-xs">Réserver</span>
+                                <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
+                            </button>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <button type="submit" class="group hidden hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-2xl shadow-2xl active:scale-95 w-full">
                                 <span class="relative z-10 uppercase tracking-[0.2em] text-xs">Confirmer ma réservation</span>
                                 <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
                             </button>
@@ -138,5 +119,25 @@
         }
     </style>
 
+    <script>
+        // Script pour gérer la soumission du formulaire de réservation
+        next = document.getElementById('next');
+        next.document.addEventListener('click', ()=>{
+            next.classListt.remove('hidden');
+        })
+        tel = document.getElementById('tel');
+        name = document.getElementById('name');
+        document.getElementById('reservation').addEventListener('submit', function(e) {
+            e.preventDefault();
+            regexTel = /^04[0-9]{8}$/;
+            regexName = /^[a-zA-ZÀ-ÖØ-öø-ÿ\s'-]+$/;
+            if(regexTel.test(tel.value) && regexName.test(name.value)) {
+                this.submit();
+            } else {
+                alert('Veuillez entrer un nom et un numéro de téléphone valides.');
+            }
+
+        });
+    </script>
 
 @endsection
