@@ -50,15 +50,18 @@
                     </div>
                 </div>
 
+
+
+
                 <div class="lg:col-span-7 bg-white/[0.02] border border-white/5 p-8 md:p-14 rounded-[2.5rem] shadow-2xl hover:border-taxi/30 transition-all duration-500">
                     <form id="reservation" action="#" method="POST" class="space-y-6">
 
                         <div class="space-y-2">
-                            <label class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] ml-4">Choisissez votre forfait</label>
+                            <label class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] ml-4">Choisissez votre trajet</label>
                             <div class="relative">
-                                <select name="trajet" class="w-full bg-gray-900 border border-white/10 text-white rounded-2xl p-4 appearance-none focus:outline-none focus:border-taxi transition-colors cursor-pointer">
+                                <select id="trajet" name="trajet" class="w-full bg-gray-900 border border-white/10 text-white rounded-2xl p-4 appearance-none focus:outline-none focus:border-taxi transition-colors cursor-pointer">
                                     @foreach($prices as $price)
-                                        <option value="{{ Str::slug($price->departure.'-vers-'.$price->destination) }}">{{ $price->departure }} → {{ $price->destination }} @if(is_numeric($price->amount)) - {{ $price->amount }}€ @endif</option>
+                                        <option data="@if(is_numeric($price->amount))  {{ $price->amount }}€ @else  Au compteur @endif" value="{{ Str::slug($price->departure.'-vers-'.$price->destination) }}">{{ $price->departure }} → {{ $price->destination }}</option>
                                     @endforeach
                                 </select>
                                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-taxi">
@@ -81,28 +84,62 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="space-y-2">
                                 <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Date de prise en charge</label>
-                                <input type="date" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                <input id="date" type="date" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Heure souhaitée</label>
-                                <input type="time" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                <input id="time" type="time" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
                             </div>
                         </div>
 
-                        <div class="pt-6">
-                            <button id="next" class="group hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-2xl shadow-2xl active:scale-95 w-full">
+                        <div id="next" class="pt-6">
+                            <button  type="button" class="group hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-2xl shadow-2xl active:scale-95 w-full">
                                 <span class="relative z-10 uppercase tracking-[0.2em] text-xs">Réserver</span>
                                 <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
                             </button>
                         </div>
-                        
-                        <div class="pt-6">
-                            <button type="submit" class="group hidden hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-2xl shadow-2xl active:scale-95 w-full">
-                                <span class="relative z-10 uppercase tracking-[0.2em] text-xs">Confirmer ma réservation</span>
-                                <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
-                            </button>
-                        </div>
 
+
+
+                        <div id="nextInput" class="hidden">
+                            <hr class="border-white/10 my-6">
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Numéro de vol</label>
+                                    <input id="flight_number" type="text" placeholder="SN1234" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Adresse de prise en charge</label>
+                                    <input id="address" type="text" placeholder="Avenue Louise 123, Bruxelles" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                <div class="space-y-2">
+                                    <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Nombre de passagers</label>
+                                    <input id="passengers" type="number" min="1" max="4" placeholder="1" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-gray-500 text-[10px] font-bold uppercase tracking-widest ml-4">Email</label>
+                                    <input id="email" type="email" placeholder="exemple@mail.com" class="w-full bg-white/5 border border-white/5 rounded-2xl p-4 text-white text-sm focus:outline-none focus:border-taxi transition-colors">
+                                </div>
+                            </div>
+
+                            <h3 class="text-white text-2xl font-bold uppercase pt-6 tracking-widest mb-6 flex items-center gap-4">
+                                <span class="w-8 h-px bg-taxi"></span>
+                                    Prix de la course : <span id="priceForm" class="text-taxi"></span>
+                            </h3>
+                            <p class="text-gray-300 font-light leading-relaxed mb-8">
+                                Toutes nos réservations sont confirmées par SMS ou e-mail.
+                            </p>
+                            <div class="pt-6">
+                                <button type="submit" class="group  hover:outline outline-2 outline-taxi -outline-offset-1 hover:text-black relative inline-flex items-center justify-center px-12 py-5 bg-gray-950 text-white font-bold transition-all overflow-hidden rounded-2xl shadow-2xl active:scale-95 w-full">
+                                    <span class="relative z-10 uppercase tracking-[0.2em] text-xs">Confirmer ma réservation</span>
+                                    <div class="absolute inset-0 bg-taxi scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-0"></div>
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
@@ -120,24 +157,77 @@
     </style>
 
     <script>
-        // Script pour gérer la soumission du formulaire de réservation
-        next = document.getElementById('next');
-        next.document.addEventListener('click', ()=>{
-            next.classListt.remove('hidden');
-        })
-        tel = document.getElementById('tel');
-        name = document.getElementById('name');
-        document.getElementById('reservation').addEventListener('submit', function(e) {
-            e.preventDefault();
-            regexTel = /^04[0-9]{8}$/;
-            regexName = /^[a-zA-ZÀ-ÖØ-öø-ÿ\s'-]+$/;
-            if(regexTel.test(tel.value) && regexName.test(name.value)) {
-                this.submit();
-            } else {
-                alert('Veuillez entrer un nom et un numéro de téléphone valides.');
-            }
-
+        // Script pour afficher le prix sélectionné dans le formulaire de réservation
+        const priceForm = document.getElementById('priceForm');
+        const trajetSelect = document.getElementById('trajet');
+        let selectedOption = trajetSelect.options[trajetSelect.selectedIndex];
+        priceForm.textContent =  selectedOption.attributes.data.value;
+        trajetSelect.addEventListener('change', function() {
+            selectedOption = this.options[this.selectedIndex];
+            priceForm.textContent = selectedOption.attributes.data.value;
         });
+        // Script pour gérer l'affichage du bouton de confirmation après la première étape
+        const next = document.getElementById('next');
+        const nextInput = document.getElementById('nextInput');
+        next.addEventListener('click', ()=>{
+            nextInput.classList.remove('hidden');
+            next.classList.add('hidden');
+        })
+        // Script pour gérer la soumission du formulaire de réservation
+document.getElementById('reservation').addEventListener('submit', function(e) {
+    // 1. On bloque l'envoi IMMEDIATEMENT
+    e.preventDefault();
+
+    // 2. On récupère les éléments
+    const tel = document.getElementById('tel');
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const date = document.getElementById('date');
+    const time = document.getElementById('time');
+
+    // --- ZONE DE VALIDATION ---
+
+    // Email
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email.value)) {
+        alert('Veuillez entrer une adresse email valide.');
+        return; // On s'arrête ici
+    }
+
+    // Date
+    const regexDate = /^\d{4}-\d{2}-\d{2}$/;
+    if (!regexDate.test(date.value)) {
+        alert('Veuillez entrer une date valide.');
+        return; // On s'arrête ici
+    }
+
+    // Heure
+    const regexTime = /^([01]\d|2[0-3]):([0-5]\d)$/;
+    if (!regexTime.test(time.value)) {
+        alert('Veuillez entrer une heure valide.');
+        return; // On s'arrête ici
+    }
+
+    // Téléphone
+    const regexTel = /^04[0-9]{8}$/;
+    if (!regexTel.test(tel.value)) {
+        alert('Veuillez entrer un numéro de téléphone valide (ex: 04XXXXXXXX).');
+        return; // On s'arrête ici
+    }
+
+    // Nom
+    const regexName = /^[a-zA-ZÀ-ÖØ-öø-ÿ\s'-]+$/;
+    if (!regexName.test(name.value) || name.value.trim().length < 2) {
+        alert('Veuillez entrer un nom valide.');
+        return; // On s'arrête ici
+    }
+
+    // --- FIN DE VALIDATION ---
+
+    // 3. SI ET SEULEMENT SI on arrive ici, on envoie le formulaire pour de vrai.
+    // On utilise la méthode requestSubmit() qui est plus moderne et respecte mieux les formulaires Laravel
+    this.Submit(); 
+});
     </script>
 
 @endsection
